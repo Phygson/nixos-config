@@ -30,9 +30,9 @@ input {
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    gaps_in = 5
-    gaps_out = 20
-    border_size = 2
+    gaps_in = 4
+    gaps_out = 10
+    border_size = 1
     col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
     col.inactive_border = rgba(595959aa)
 
@@ -42,7 +42,7 @@ general {
 decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    rounding = 10
+    rounding = 1
     blur = yes
     blur_size = 3
     blur_passes = 1
@@ -61,11 +61,11 @@ animations {
 
     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
-    animation = windows, 1, 7, myBezier
-    animation = windowsOut, 1, 7, default, popin 80%
-    animation = border, 1, 10, default
-    animation = fade, 1, 7, default
-    animation = workspaces, 1, 6, default
+    animation = windows, 1, 3, myBezier
+    animation = windowsOut, 1, 3, default, popin 80%
+    animation = border, 1, 4, default
+    animation = fade, 1, 3, default
+    animation = workspaces, 1, 3, default
 }
 
 dwindle {

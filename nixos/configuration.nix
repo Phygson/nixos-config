@@ -91,7 +91,10 @@
 
   services.xserver.displayManager.startx.enable = true;
   #services.xserver.desktopManager.plasma5.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+  };
 
   services.xserver.layout = "us,ru";
   services.xserver.xkbOptions = "grp:alt_shift_toggle";

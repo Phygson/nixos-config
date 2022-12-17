@@ -89,7 +89,7 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.startx.enable = true;
   #services.xserver.desktopManager.plasma5.enable = true;
   programs.hyprland.enable = true;
 
@@ -97,6 +97,7 @@
   services.xserver.xkbOptions = "grp:alt_shift_toggle";
 
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.opengl.driSupport32Bit = true;

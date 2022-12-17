@@ -57,7 +57,8 @@
   
   xdg.userDirs.enable = true;
   xdg.userDirs.createDirectories = true;
-
+ 
+  programs.bash.enable = true;
   programs.fish.enable = true;
   programs.fish.plugins = [
     {

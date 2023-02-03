@@ -13,6 +13,7 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+    xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, hyprland, ... }@inputs:

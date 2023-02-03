@@ -13,7 +13,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./../nixos/cachix.nix
-    # inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -87,11 +87,12 @@
 
   home.packages = with pkgs; [ wofi gtklock ];
 
-  #wayland.windowManager.hyprland = {
-  #  enable = true;
-  #  systemdIntegration = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemdIntegration = true;
+    nvidiaPatches = true;
   #  extraConfig = (import ./hyprland.conf.nix {});
-  #};
+  };
 
   programs.vscode = {
     enable = true;

@@ -17,7 +17,7 @@
     ./cachix.nix
     ./hardware-configuration.nix
 
-    inputs.hyprland.nixosModules.default
+    # inputs.hyprland.nixosModules.default
   ];
   fileSystems = {
     "/".options = [ "discard=async" "space_cache=v2" "compress=zstd" "noatime" ];
@@ -90,11 +90,11 @@
   };
 
   services.xserver.displayManager.startx.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
-  programs.hyprland = {
-    enable = true;
-    nvidiaPatches = true;
-  };
+  services.xserver.desktopManager.plasma5.enable = true;
+  #programs.hyprland = {
+  #  enable = true;
+  #  nvidiaPatches = true;
+  #};
 
   services.xserver.layout = "us,ru";
   services.xserver.xkbOptions = "grp:alt_shift_toggle";

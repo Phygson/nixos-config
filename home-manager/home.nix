@@ -91,7 +91,7 @@
     enable = true;
     systemdIntegration = true;
     nvidiaPatches = true;
-  #  extraConfig = (import ./hyprland.conf.nix {});
+    extraConfig = (import ./hyprland.conf.nix {});
   };
 
   programs.vscode = {

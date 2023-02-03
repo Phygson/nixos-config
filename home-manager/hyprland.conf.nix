@@ -1,11 +1,13 @@
 {}: ''
-monitor=,preferred,auto,auto
+monitor=,preferred,auto,1
 
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
+
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP & /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & xrdb -merge -I$HOME ~/.Xresources & waybar & dunst
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -24,14 +26,14 @@ input {
         natural_scroll = no
     }
 
-    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+    sensitivity = -0.2 # -1.0 - 1.0, 0 means no modification.
 }
 
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    gaps_in = 4
-    gaps_out = 10
+    gaps_in = 2
+    gaps_out = 5
     border_size = 1
     col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
     col.inactive_border = rgba(595959aa)
@@ -42,7 +44,7 @@ general {
 decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    rounding = 1
+    rounding = 0
     blur = yes
     blur_size = 3
     blur_passes = 1
@@ -65,7 +67,7 @@ animations {
     animation = windowsOut, 1, 3, default, popin 80%
     animation = border, 1, 4, default
     animation = fade, 1, 3, default
-    animation = workspaces, 1, 3, default
+    animation = workspaces, 1, 2, default
 }
 
 dwindle {
@@ -102,14 +104,18 @@ $mainMod = SUPER
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, kitty
-bind = $mainMod, L, exec, gtklock
 bind = $mainMod, W, killactive, 
 bind = $mainMod ALT, Q, exit, 
 bind = $mainMod, B, exec, firefox
-bind = $mainMod, V, togglefloating, 
+bind = $mainMod, F, exec, thunar
+bind = $mainMod, T, togglefloating, 
 bind = $mainMod, D, exec, wofi --show drun
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
+bind = $mainMod, L, exec, gtklock -m powerbar-module
+bind = $mainMod, S, exec, screenshot
+bind = $mainMod, F9, exec, notify-send "wf-recorder" "Started" && wf-recorder  -g "$(slurp)" --encoder h264_nvenc -D -f ~/Videos/Record/$(date +'%y%m%d_%Hh%Mm%Ss.mp4')
+bind = $mainMod, F10, exec, killall -2 wf-recorder && notify-send "wf-recorder" "Stopped"
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l

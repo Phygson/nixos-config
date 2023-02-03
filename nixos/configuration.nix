@@ -124,7 +124,7 @@
     #home-manager
     fish
     any-nix-shell
-    #libreoffice
+    libreoffice
   ];
 
   programs.fish.enable = true;

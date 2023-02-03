@@ -89,7 +89,7 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   #programs.hyprland = {
   #  enable = true;

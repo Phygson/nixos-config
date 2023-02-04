@@ -60,6 +60,7 @@
   # FIXME: Add the rest of your current configuration
 
   networking.hostName = "grob";
+  networking.wireless.enable = true;
   networking.networkmanager.enable = true;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
@@ -89,8 +90,8 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
   programs.hyprland = {
     enable = true;
     nvidiaPatches = true;

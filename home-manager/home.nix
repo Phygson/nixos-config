@@ -85,13 +85,24 @@
 
   xsession.enable = true;
 
-  home.packages = with pkgs; [ wofi gtklock ];
+  home.packages = with pkgs; [ wofi gtklock tdesktop ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     systemdIntegration = true;
     nvidiaPatches = true;
     extraConfig = (import ./hyprland.conf.nix {});
+  };
+
+  gtk = {
+    enable=true;
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Maroon-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = ["maroon"];
+        variant = "mocha";
+      };
+    };
   };
 
   programs.vscode = {

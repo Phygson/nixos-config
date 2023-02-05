@@ -60,7 +60,7 @@
   # FIXME: Add the rest of your current configuration
 
   networking.hostName = "grob";
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
@@ -135,6 +135,11 @@
   programs.fish.promptInit = ''
     any-nix-shell fish --info-right | source
   '';
+
+  services.gnome.gnome-keyring = {
+    enable = true;
+  };
+
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

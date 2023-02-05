@@ -129,6 +129,7 @@
     hunspell
     hunspellDicts.ru_RU
     hunspellDicts.en_US
+    nerdfonts
   ];
 
   programs.fish.enable = true;

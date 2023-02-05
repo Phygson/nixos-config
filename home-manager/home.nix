@@ -85,7 +85,7 @@
 
   xsession.enable = true;
 
-  home.packages = with pkgs; [ wofi gtklock tdesktop ];
+  home.packages = with pkgs; [ wofi gtklock tdesktop waybar ];
 
   wayland.windowManager.hyprland = {
     enable = true;

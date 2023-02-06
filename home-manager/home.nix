@@ -85,7 +85,22 @@
 
   xsession.enable = true;
 
-  home.packages = with pkgs; [ wofi gtklock tdesktop waybar ];
+  home.packages = with pkgs; [ wofi gtklock tdesktop ];
+
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar.overrideAttrs (oa: {
+      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
+    });
+    style =
+    ''
+      * {
+        font-family: FiraCode Nerd Font; 
+	font-size: 12pt;
+        padding: 0 8px;
+      }
+    '';
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;

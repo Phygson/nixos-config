@@ -92,7 +92,7 @@
 
   programs.kitty = {
     enable = true;
-    font.name = "Fira Code Nerd Font";
+    font.name = "FiraCode Nerd Font";
     font.package = pkgs.nerdfonts;
     font.size = 12;
     settings = {

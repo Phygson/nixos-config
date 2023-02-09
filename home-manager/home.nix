@@ -45,6 +45,11 @@
   home = {
     username = "phygson";
     homeDirectory = "/home/phygson";
+    pointerCursor = {
+      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+      x11.defaultCursor = "Catppuccin-Mocha-Dark-Cursors";
+    };
   };
   #home.sessionVariables = {
   #  LIBVA_DRIVER_NAME = "nvidia";
@@ -74,8 +79,8 @@
 
   programs.kitty = {
     enable = true;
-    font.name = "Fira Code";
-    font.package = pkgs.fira-code;
+    font.name = "Fira Code Nerd Font";
+    font.package = pkgs.nerdfonts;
     font.size = 12;
     settings = {
       shell = "fish --interactive";
@@ -101,6 +106,12 @@
       }
     '';
   };
+  
+  programs.rofi = {
+    enable=true;
+    package = pkgs.rofi-wayland;
+    plugins = with pkgs; [ rofi-calc ];
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -117,6 +128,10 @@
         accents = ["maroon"];
         variant = "mocha";
       };
+    };
+    cursorTheme = {
+      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
     };
   };
 

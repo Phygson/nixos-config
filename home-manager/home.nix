@@ -71,8 +71,17 @@
       src = pkgs.fetchFromGitHub {
         owner = "pure-fish";
         repo = "pure";
-        rev = "v4.4.0";
-        sha256 = "OlyuCJ1FWCqZqTy+wTUwaTg2RG5VJvhXa+tU+Vtm3uA=";
+        rev = "v4.4.1";
+        sha256 = "2b2/LZXSchHnPKyjwAcR/oCY38qJ/7Dq8cJHrJmdjoc=";
+      };
+    }
+    {
+      name = "fzf";
+      src = pkgs.fetchFromGitHub {
+        owner = "PatrickF1";
+	repo = "fzf";
+	rev = "v9.7";
+	sha256 = "haNSqXJzLL3JGvD4JrASVmhLJz6i9lna6/EdojXdFOo=";
       };
     }
   ];

@@ -114,6 +114,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -129,6 +130,7 @@
     hunspell
     hunspellDicts.ru_RU
     hunspellDicts.en_US
+    pavucontrol
   ];
 
   fonts.fonts = with pkgs; [

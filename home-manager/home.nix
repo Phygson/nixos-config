@@ -102,7 +102,7 @@
 
   xsession.enable = true;
 
-  home.packages = with pkgs; [ wofi gtklock tdesktop ];
+  home.packages = with pkgs; [ wofi gtklock tdesktop nurl ];
 
   programs.waybar = {
     enable = true;

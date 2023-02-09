@@ -14,10 +14,6 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     xdph.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-
-    # Nurl
-    nurl.url = "github:nix-community/nurl";
-    nurl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, hyprland, ... }@inputs:

@@ -23,6 +23,7 @@
       # outputs.overlays.modifications
       # outputs.overlays.additions
       inputs.nixpkgs-wayland.overlay
+      inputs.hyprland.overlays.default
       # Or overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -32,7 +33,7 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
-    ];
+    ];    
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
@@ -106,17 +107,8 @@
 
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
-    });
-    style =
-    ''
-      * {
-        font-family: FiraCode Nerd Font; 
-	font-size: 12pt;
-        padding: 0 8px;
-      }
-    '';
+    package = pkgs.waybar-hyprland;
+    style = (import ./waybar.style.css.nix {});
   };
   
   programs.rofi = {

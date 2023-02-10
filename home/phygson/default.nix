@@ -104,7 +104,7 @@
   xsession.enable = true;
 
   home.packages = with pkgs; [ wofi gtklock tdesktop nurl 
-        (writeShellScriptBin "starthl" (import ./starthl.nix {})) ];
+        (writeShellScriptBin "starthl" ( builtins.readFile ./starthl.sh )) ];
 
   programs.waybar = {
     enable = true;

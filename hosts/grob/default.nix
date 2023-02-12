@@ -82,6 +82,11 @@
   
   security.pam.services.gtklock = {};
 
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;

@@ -63,6 +63,9 @@
   
   xdg.userDirs.enable = true;
   xdg.userDirs.createDirectories = true;
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
  
   programs.bash.enable = true;
   programs.fish.enable = true;

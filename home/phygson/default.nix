@@ -22,7 +22,7 @@
       # If you want to use overlays your own flake exports (from overlays dir):
       # outputs.overlays.modifications
       # outputs.overlays.additions
-      inputs.nixpkgs-wayland.overlay
+      # inputs.nixpkgs-wayland.overlay
       inputs.hyprland.overlays.default
       # Or overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default

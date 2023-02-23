@@ -159,6 +159,10 @@
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
     };
+    guvids = {
+      isNormalUser=true;
+      extraGroups = [ "wheel" ];
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

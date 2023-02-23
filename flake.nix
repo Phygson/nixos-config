@@ -69,6 +69,14 @@
             ./home/phygson
           ];
         };
+	"guvids@grob" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home/guvids
+          ];
+        };
       };
     };
 }

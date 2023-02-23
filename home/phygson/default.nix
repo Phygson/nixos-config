@@ -83,7 +83,7 @@
       name = "fzf";
       src = pkgs.fetchFromGitHub {
         owner = "PatrickF1";
-	repo = "fzf";
+	repo = "fzf.fish";
 	rev = "v9.7";
 	sha256 = "haNSqXJzLL3JGvD4JrASVmhLJz6i9lna6/EdojXdFOo=";
       };
@@ -96,7 +96,7 @@
   programs.kitty = {
     enable = true;
     font.name = "FiraCode Nerd Font";
-    font.package = pkgs.nerdfonts;
+    font.package = pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; };
     font.size = 12;
     settings = {
       shell = "fish --interactive";

@@ -141,6 +141,10 @@
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    open-sans
+    ubuntu_font_family
+    fira
+    fira-code
   ];
 
   programs.fish.enable = true;

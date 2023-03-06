@@ -146,7 +146,13 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ];
+    extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "mesonbuild";
+        publisher = "mesonbuild";
+        version = "1.7.1";
+        sha256 = "odLTcgF+qkMwu53lr35tezvFnptox0MGl9n4pZ10JZo=";
+      } ];
   };
 
   # Enable home-manager and git

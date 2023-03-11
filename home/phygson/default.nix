@@ -152,6 +152,12 @@
         publisher = "mesonbuild";
         version = "1.7.1";
         sha256 = "odLTcgF+qkMwu53lr35tezvFnptox0MGl9n4pZ10JZo=";
+      } 
+      {
+        name = "cpptools";
+	publisher = "ms-vscode";
+	version = "1.14.4";
+	sha256 = "3gWMrsVr5XjsuXL3DJ+KkVVD2RWtN6Uqdp3e7u9OwnM=";
       } ];
   };
 

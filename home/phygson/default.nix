@@ -61,6 +61,7 @@
   #}; 
   fonts.fontconfig.enable = true;
   
+  xdg.enable = true;
   xdg.userDirs.enable = true;
   xdg.userDirs.createDirectories = true;
 
@@ -106,7 +107,7 @@
 
   xsession.enable = true;
 
-  home.packages = with pkgs; [ wofi gtklock tdesktop nurl 
+  home.packages = with pkgs; [ wofi gtklock tdesktop nurl libreoffice
         (writeShellScriptBin "starthl" ( builtins.readFile ./starthl.sh )) ];
 
   programs.waybar = {
@@ -146,18 +147,15 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide
+                   pkgs.vscode-extensions.arrterian.nix-env-selector
+                   pkgs.vscode-extensions.ms-vscode.cpptools
+                 ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "mesonbuild";
         publisher = "mesonbuild";
         version = "1.7.1";
         sha256 = "odLTcgF+qkMwu53lr35tezvFnptox0MGl9n4pZ10JZo=";
-      } 
-      {
-        name = "cpptools";
-	publisher = "ms-vscode";
-	version = "1.14.4";
-	sha256 = "3gWMrsVr5XjsuXL3DJ+KkVVD2RWtN6Uqdp3e7u9OwnM=";
       } ];
   };
 

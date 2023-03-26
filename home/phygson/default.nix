@@ -126,7 +126,7 @@
     enable = true;
     systemdIntegration = true;
     nvidiaPatches = true;
-    extraConfig = (import ./hyprland.conf.nix {});
+    extraConfig = ( builtins.readFile ./hyprland.conf );
   };
 
   gtk = {

@@ -14,21 +14,21 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6fbc1b75-ddff-47b3-b537-c9faba2f3b8e";
+    { device = "/dev/disk/by-uuid/fee68f4d-c817-4d1b-a6c9-74e5253b73d9";
       fsType = "btrfs";
-      options = [ "subvol=n/@" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/6fbc1b75-ddff-47b3-b537-c9faba2f3b8e";
-      fsType = "btrfs";
-      options = [ "subvol=n/@home" ];
+      options = [ "subvol=@nixos/@" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/6fbc1b75-ddff-47b3-b537-c9faba2f3b8e";
+    { device = "/dev/disk/by-uuid/fee68f4d-c817-4d1b-a6c9-74e5253b73d9";
       fsType = "btrfs";
-      options = [ "subvol=@nix_store" ];
+      options = [ "subvol=@nixos/@nix" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/fee68f4d-c817-4d1b-a6c9-74e5253b73d9";
+      fsType = "btrfs";
+      options = [ "subvol=@nixos/@home" ];
     };
 
   fileSystems."/boot" =

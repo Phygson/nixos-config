@@ -97,7 +97,7 @@
   };
 
   services.xserver.displayManager.startx.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   programs.hyprland = {
     enable = true;
     nvidiaPatches = true;
@@ -155,6 +155,13 @@
   services.gnome.gnome-keyring = {
     enable = true;
   };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
 
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.

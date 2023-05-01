@@ -23,6 +23,7 @@
     "/".options = [ "discard=async" "space_cache=v2" "compress=zstd" "noatime" ];
     "/home".options = [ "discard=async" "space_cache=v2" "compress=zstd" "noatime" ];
     "/nix".options = [ "discard=async" "space_cache=v2" "compress=zstd" "noatime" ];
+    "/hdd".options = [ "space_cache=v2" "compress=zstd" "noatime" ];
   };
 
 
@@ -62,6 +63,7 @@
   networking.hostName = "grob";
   # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
@@ -95,6 +97,17 @@
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    elisa
+    gwenview
+    okular
+    oxygen
+    khelpcenter
+    konsole
+    plasma-browser-integration
+    print-manager
+  ];
 
   services.xserver.displayManager.startx.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
@@ -155,14 +168,6 @@
   services.gnome.gnome-keyring = {
     enable = true;
   };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
-
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
